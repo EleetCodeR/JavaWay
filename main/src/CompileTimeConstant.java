@@ -25,5 +25,13 @@ public class CompileTimeConstant {
         }
         System.out.println("a: " + a); // CTE
         // (Compiler identifies an execution path where the variable is accessed without being initialized).
+
+        final int compileTimeConst = 10; // by using FINAL this is now constant.
+        if (compileTimeConst == 10) { // Compiler has no way of knowing that this condition is always TRUE.
+            a = 10;
+            System.out.println("a: " + a); // VALID.
+        }
+        System.out.println("a: " + a); // NOW VALID.
+
     }
 }
